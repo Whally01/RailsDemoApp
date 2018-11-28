@@ -1,0 +1,22 @@
+<h1>GRAPHQL API</h1>
+
+  <table>
+ <thead>
+    <tr>
+      <th> # #</th>
+      <th>Quote</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <% if @quotes["data"]!='' %>
+   <tbody>
+     <% @quotes["data"].each do |quote| %>
+      <tr>
+        <td> - </td>
+        <td>"<%= quote["attributes"]["value"] %>"</td>
+        <td><%= quote["attributes"]["tags"][0] %></td>
+      </tr>
+    <% end %> 
+  <% end %> 
+  </tbody>
+</table>
