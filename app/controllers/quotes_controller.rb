@@ -23,7 +23,7 @@ class QuotesController < ApplicationController
 			url = @@api_url.concat("/rest/quotes")
 			response = RestClient.get(url)
 		else
-			response = RestClient.get('localhost:3000/json/quotes')
+			response = RestClient.get('localhost:3000/rest/quotes')
 		end
 	 	@quotes = JSON.parse(response)
 	 	render "json_quotes"
@@ -33,7 +33,7 @@ class QuotesController < ApplicationController
 			url = @@api_url.concat("/graphql/quotes")
 			response = RestClient.get(url)
 		else
-			response = RestClient.get('localhost:3000/json/quotes')
+			response = RestClient.get('localhost:3000/graphql/quotes')
 		end
 	 	@quotes = JSON.parse(response)
 	 	render "json_quotes"
